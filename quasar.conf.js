@@ -30,7 +30,7 @@ module.exports = function (ctx) {
       // iconSet: 'ionicons-v4',
       // lang: 'de', // Quasar language
 
-      // all: true, // --- includes everything; for dev only!
+      // importStrategy: true, // --- includes everything; for dev only!
 
       components: [
         'QLayout',
@@ -86,10 +86,10 @@ module.exports = function (ctx) {
     devServer: {
       // https: true,
       // port: 8080,
-      open: true // opens browser window automatically
+      open: true // opens browser window automaticimportStrategyy
     },
 
-    // animations: 'all', // --- includes all animations
+    // animations: 'importStrategy', // --- includes importStrategy animations
     animations: [],
 
     ssr: {
