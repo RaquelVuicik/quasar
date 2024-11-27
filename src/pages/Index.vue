@@ -82,7 +82,14 @@
             type="submit"
             color="primary"
             class="float-right"
-            />
+          />
+          <q-btn
+            label="Resetar"
+            type="reset"
+            color="default"
+            class="float-right text-grey-10 q-mr-md"
+            onclick="resetForm"
+          />
         </div>
       </q-form>
   </q-page>
@@ -111,9 +118,19 @@ export default {
         color: 'positive',
         icon: 'check_circle_outline'
       })
+      this.onReset()
     },
-    onReset () {
-      console.log('reseta formulário')
+    async onReset () {
+      this.$refs.myForm.resetValidation()
+      this.resetForm()
+    },
+    resetForm () {
+      this.form = {
+        nome: '',
+        idade: null,
+        email: '',
+        telefone: ''
+      }
     }
   }
 }
