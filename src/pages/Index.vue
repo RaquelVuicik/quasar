@@ -76,11 +76,50 @@
             <q-icon name="phone"/>
           </template>
         </q-input>
+        <q-select
+          outlined
+          v-model="form.tipoPessoa"
+          :options="optionsTipoPessoa"
+          label="Tipo de Pessoa"
+          class="col-md-12 col-sm-12 col-xs-12"
+          color="deep-purple"
+          emit-value
+          map-options
+          :rules="[
+            val => val && val.length > 0 || 'Tipo de Pessoa obrigatório'
+          ]"
+        />
+        <span class="text-bold">Sexo: </span>
+        <q-option-group
+          :options="optionsSexo"
+          label="Sexo"
+          type="radio"
+          v-model="form.sexo"
+          class="col-md-12 col-sm-12 col-xs-12"
+          color="deep-purple"
+        />
+        <span class="text-bold">Possui alguma dificuldade? </span>
+        <q-option-group
+          :options="optionsDificuldades"
+          label="Dificuldades"
+          type="checkbox"
+          v-model="form.dificuldades"
+          class="col-md-12 col-sm-12 col-xs-12"
+          color="deep-purple"
+        />
+        <q-toggle
+          v-model="form.notificacoes"
+          color="deep-purple"
+          icon="email"
+          label="Receber notificações?"
+          size="lg"
+        />
+        <!-- <p>{{ form.dificuldades }}</p> -->
         <div class="col-12">
           <q-btn
             label="Cadastrar"
             type="submit"
-            color="primary"
+            color="deep-purple"
             class="float-right"
           />
           <q-btn
@@ -107,8 +146,26 @@ export default {
         nome: '',
         idade: null,
         email: '',
-        telefone: ''
-      }
+        telefone: '',
+        tipoPessoa: '',
+        sexo: 'NI',
+        dificuldades: [],
+        notificacoes: false
+      },
+      optionsTipoPessoa: [
+        { label: 'Pessoa Física', value: 'pf' },
+        { label: 'Pessoa Jurídica', value: 'pj' }
+      ],
+      optionsSexo: [
+        { label: 'Não Informado', value: 'NI' },
+        { label: 'Masculino', value: 'M' },
+        { label: 'Feminino', value: 'F' }
+      ],
+      optionsDificuldades: [
+        { label: 'Motoras', value: 'motoras' },
+        { label: 'Visuais', value: 'visuais' },
+        { label: 'Respiratórias', value: 'respiratorias' }
+      ]
     }
   },
   methods: {
@@ -121,15 +178,19 @@ export default {
       this.onReset()
     },
     async onReset () {
+      await this.resetForm()
       this.$refs.myForm.resetValidation()
-      this.resetForm()
     },
-    resetForm () {
+    async resetForm () {
       this.form = {
         nome: '',
         idade: null,
         email: '',
-        telefone: ''
+        telefone: '',
+        tipoPessoa: '',
+        sexo: 'NI',
+        dificuldades: [],
+        notificacoes: false
       }
     }
   }

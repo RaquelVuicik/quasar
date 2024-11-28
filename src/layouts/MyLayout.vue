@@ -2,7 +2,7 @@
   <q-layout view="hHh Lpr fFf"> <!-- Be sure to play with the Layout demo on docs -->
 
     <!-- (Optional) The Header -->
-    <q-header elevated class="bg-primary text-white">
+    <q-header elevated class="bg-deep-purple text-white">
       <q-toolbar>
         <q-btn
           flat
@@ -11,8 +11,8 @@
           icon="menu"
           @click="leftDrawer = !leftDrawer"
         />
-        <q-toolbar-title>
-          Header
+        <q-toolbar-title class="flex flex-center">
+          Introdução ao Quasar
         </q-toolbar-title>
       </q-toolbar>
     </q-header>
@@ -27,8 +27,8 @@
           icon="menu"
           @click="leftDrawer = !leftDrawer"
         />
-        <q-toolbar-title>
-          Footer
+        <q-toolbar-title class="flex flex-center">
+          Desenvolvido por Raquel Vuicik
         </q-toolbar-title>
       </q-toolbar>
     </q-footer>
