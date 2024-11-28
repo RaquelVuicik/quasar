@@ -8,10 +8,10 @@ const routes = [
     ]
   },
   {
-    path: '/perfil',
-    component: () => import('layouts/LayoutPerfil.vue'),
+    path: '/tabela',
+    component: () => import('layouts/LayoutTabela.vue'),
     children: [
-      { path: '', component: () => import('pages/Perfil.vue') }
+      { path: '', component: () => import('pages/Tabela.vue') }
     ]
   }
 ]

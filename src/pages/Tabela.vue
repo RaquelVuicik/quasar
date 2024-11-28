@@ -1,6 +1,6 @@
 <template>
   <q-page padding>
-    Perfil
+    Tabela
   </q-page>
 </template>
 

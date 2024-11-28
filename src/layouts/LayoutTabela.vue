@@ -11,45 +11,15 @@
           icon="menu"
           @click="leftDrawer = !leftDrawer"
         />
-        <q-toolbar-title>
-          Header
+        <q-toolbar-title class="flex flex-center">
+          Tabela
         </q-toolbar-title>
       </q-toolbar>
-
-      <q-tabs>
-        <q-route-tab
-          icon="map"
-          to="/your/route"
-          replace
-          label="One Tab"
-        />
-        <q-route-tab
-          icon="assignment"
-          to="/some/other/route"
-          replace
-          label="Other Tab"
-        />
-      </q-tabs>
     </q-header>
 
     <!-- (Optional) The Footer -->
-    <q-footer>
-      <q-tabs switch-indicator>
-        <q-route-tab
-          icon="map"
-          to="/your/route"
-          replace
-          label="One Tab"
-        />
-        <q-route-tab
-          icon="assignment"
-          to="/some/other/route"
-          replace
-          label="Other Tab"
-        />
-      </q-tabs>
-
-      <q-toolbar>
+    <q-footer class="bg-grey-8 text-white">
+        <q-toolbar>
         <q-btn
           flat
           round
@@ -57,8 +27,8 @@
           icon="menu"
           @click="leftDrawer = !leftDrawer"
         />
-        <q-toolbar-title>
-          Footer
+        <q-toolbar-title class="flex flex-center">
+          Desenvolvido por Raquel Vuicik
         </q-toolbar-title>
       </q-toolbar>
     </q-footer>
