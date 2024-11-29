@@ -238,7 +238,7 @@ export default {
             }
           }
         },
-        labels: ['Apples', 'Oranges', 'Bananas', 'Berries']
+        labels: ['Maças', 'Laranjas', 'Bananas', 'Morangos']
       },
       seriesH: [{
         name: 'Series 1',
