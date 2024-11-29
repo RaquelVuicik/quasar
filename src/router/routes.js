@@ -34,6 +34,13 @@ const routes = [
     children: [
       { path: '', component: () => import('pages/Card.vue') }
     ]
+  },
+  {
+    path: '/geolocalizacao',
+    component: () => import('layouts/LayoutGeolocalizacao.vue'),
+    children: [
+      { path: '', component: () => import('pages/Geolocalizacao.vue') }
+    ]
   }
 ]
 
