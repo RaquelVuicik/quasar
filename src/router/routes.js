@@ -20,6 +20,13 @@ const routes = [
     children: [
       { path: '', component: () => import('pages/BibliotecaExterna.vue') }
     ]
+  },
+  {
+    path: '/skeleton-table',
+    component: () => import('layouts/LayoutSkeletonTable.vue'),
+    children: [
+      { path: '', component: () => import('pages/SkeletonTable.vue') }
+    ]
   }
 ]
 
