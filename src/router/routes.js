@@ -27,6 +27,13 @@ const routes = [
     children: [
       { path: '', component: () => import('pages/SkeletonTable.vue') }
     ]
+  },
+  {
+    path: '/card',
+    component: () => import('layouts/LayoutCard.vue'),
+    children: [
+      { path: '', component: () => import('pages/Card.vue') }
+    ]
   }
 ]
 
