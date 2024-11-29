@@ -2,7 +2,7 @@
   <q-layout view="hHh Lpr fFf"> <!-- Be sure to play with the Layout demo on docs -->
 
     <!-- (Optional) The Header -->
-    <q-header elevated class="bg-deep-purple text-white">
+    <q-header elevated>
       <q-toolbar>
         <q-btn
           flat
@@ -12,14 +12,14 @@
           @click="leftDrawer = !leftDrawer"
         />
         <q-toolbar-title class="flex flex-center">
-          Introdução ao Quasar
+          Biblioteca Externa
         </q-toolbar-title>
       </q-toolbar>
     </q-header>
 
     <!-- (Optional) The Footer -->
     <q-footer class="bg-grey-8 text-white">
-        <q-toolbar>
+      <q-toolbar>
         <q-btn
           flat
           round
@@ -56,7 +56,7 @@
 
 <script>
 export default {
-  name: 'PaginaInicial',
+  // name: 'LayoutName',
 
   data () {
     return {

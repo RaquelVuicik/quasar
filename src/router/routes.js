@@ -13,6 +13,13 @@ const routes = [
     children: [
       { path: '', component: () => import('pages/Tabela.vue') }
     ]
+  },
+  {
+    path: '/biblioteca-externa',
+    component: () => import('layouts/LayoutBibliotecaExterna.vue'),
+    children: [
+      { path: '', component: () => import('pages/BibliotecaExterna.vue') }
+    ]
   }
 ]
 
