@@ -41,6 +41,13 @@ const routes = [
     children: [
       { path: '', component: () => import('pages/Geolocalizacao.vue') }
     ]
+  },
+  {
+    path: '/camera',
+    component: () => import('layouts/LayoutCamera.vue'),
+    children: [
+      { path: '', component: () => import('pages/Camera.vue') }
+    ]
   }
 ]
 
