@@ -13,7 +13,7 @@
           />
           <q-toolbar-title
             class="flex flex-center">
-            Geolocalização
+            Mapas
           </q-toolbar-title>
         </q-toolbar>
       </q-header>
@@ -110,7 +110,7 @@ const linksData = [
 ]
 
 export default {
-  name: 'PaginaGeolocalizacao',
+  name: 'PaginaMapas',
   components: { EssentialLink },
   data () {
     return {

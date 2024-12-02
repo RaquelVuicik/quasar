@@ -8,12 +8,36 @@
             flat
             round
             dense
+            icon="menu"
+            @click="leftDrawer = !leftDrawer"
           />
           <q-toolbar-title class="flex flex-center">
             Tabela Skeleton
           </q-toolbar-title>
         </q-toolbar>
       </q-header>
+
+      <!-- (Optional) A Drawer; you can add one more with side="right" or change this one's side -->
+    <q-drawer
+      v-model="leftDrawer"
+      show-if-above
+      bordered
+      content-class="bg-grey-1"
+    >
+      <q-list>
+        <q-item-label
+          header
+          class="text-grey-8"
+        >
+          Links Essenciais
+        </q-item-label>
+        <EssentialLink
+          v-for="link in essentialLinks"
+          :key="link.title"
+          v-bind="link"
+        />
+      </q-list>
+    </q-drawer>
 
       <!-- (Optional) The Footer -->
       <q-footer class="bg-grey-8 text-white">
@@ -22,6 +46,8 @@
             flat
             round
             dense
+            icon="menu"
+            @click="leftDrawer = !leftDrawer"
           />
           <q-toolbar-title class="flex flex-center">
             Desenvolvido por Raquel Vuicik
@@ -38,12 +64,58 @@
   </template>
 
 <script>
-export default {
-  // name: 'LayoutName',
+import EssentialLink from '../components/EssentialLink.vue'
 
+const linksData = [
+  {
+    title: 'Home',
+    icon: 'home',
+    route: 'home'
+  },
+  {
+    title: 'Tabela',
+    icon: 'table_chart',
+    route: 'tabela'
+  },
+  {
+    title: 'Biblioteca Externa',
+    icon: 'library_books',
+    route: 'biblioteca-externa'
+  },
+  {
+    title: 'Skeleton Table',
+    icon: 'table_rows',
+    route: 'skeleton-table'
+  },
+  {
+    title: 'Cards',
+    icon: 'dashboard',
+    route: 'card'
+  },
+  {
+    title: 'Camera',
+    icon: 'photo_camera',
+    route: 'camera'
+  },
+  {
+    title: 'Geolocalização',
+    icon: 'location_on',
+    route: 'geolocalizacao'
+  },
+  {
+    title: 'Mapas',
+    icon: 'explore',
+    route: 'maps'
+  }
+]
+
+export default {
+  name: 'PaginaSkeletonTable',
+  components: { EssentialLink },
   data () {
     return {
-      leftDrawer: true
+      leftDrawer: false,
+      essentialLinks: linksData
     }
   }
 }
